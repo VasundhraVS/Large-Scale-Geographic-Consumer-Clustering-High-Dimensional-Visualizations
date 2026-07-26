@@ -2,26 +2,51 @@
 
 ## Project Overview
 
-This project applies **Machine Learning (K-Means Clustering)** to analyze a real estate dataset and identify groups of properties with similar characteristics. The dataset includes features such as house age, distance to the nearest MRT station, number of convenience stores, geographical coordinates, and house prices.
+This project applies **Machine Learning (K-Means Clustering)** to analyze a real estate dataset and identify groups of properties with similar characteristics. The dataset includes information such as house age, distance to the nearest MRT station, number of convenience stores, geographical coordinates, and house prices.
 
-The project also uses **Principal Component Analysis (PCA)** for dimensionality reduction and **Folium** to create an interactive geographic visualization of the clustered properties.
+The project also uses **Principal Component Analysis (PCA)** to reduce high-dimensional data into two dimensions for visualization and **Folium** to create an interactive geographic map of clustered properties.
 
 ---
 
-## Objectives
+# Problem Statement
+
+Large real estate datasets contain multiple features that make it difficult to identify meaningful patterns manually. This project aims to cluster similar properties based on their geographical and housing characteristics, helping users understand market segments through machine learning and interactive visualizations.
+
+---
+
+# Objectives
 
 - Load and preprocess the real estate dataset.
 - Perform exploratory data analysis.
 - Select important features for clustering.
-- Standardize the data using StandardScaler.
+- Standardize numerical features.
 - Determine the optimal number of clusters using the Elbow Method.
 - Apply the K-Means clustering algorithm.
-- Reduce dimensions using PCA for visualization.
-- Create an interactive map showing clustered properties using Folium.
+- Visualize clusters using PCA.
+- Display clustered properties on an interactive Folium map.
+- Save the clustered dataset and interactive map.
 
 ---
 
-## Technologies Used
+# Dataset
+
+The project uses the **Real Estate Valuation Dataset**.
+
+### Features
+
+| Feature | Description |
+|---------|-------------|
+| X1 Transaction Date | Date of property transaction |
+| X2 House Age | Age of the house |
+| X3 Distance to MRT Station | Distance to the nearest MRT station |
+| X4 Number of Convenience Stores | Number of nearby convenience stores |
+| X5 Latitude | Latitude coordinate |
+| X6 Longitude | Longitude coordinate |
+| Y House Price of Unit Area | House price per unit area |
+
+---
+
+# Technologies Used
 
 - Python
 - Google Colab
@@ -33,31 +58,35 @@ The project also uses **Principal Component Analysis (PCA)** for dimensionality 
 
 ---
 
-## Dataset
+# Libraries Used
 
-The project uses the **Real Estate Valuation Dataset**, which contains information about:
-
-- House Age
-- Distance to the nearest MRT Station
-- Number of Convenience Stores
-- Latitude
-- Longitude
-- House Price of Unit Area
+```python
+pandas
+numpy
+matplotlib
+sklearn
+folium
+```
 
 ---
 
-## Machine Learning Workflow
+# Machine Learning Workflow
 
-### 1. Data Loading
+## 1. Data Loading
+
 - Imported the dataset using Pandas.
+- Displayed the first few records.
 
-### 2. Data Exploration
-- Displayed dataset information.
-- Checked summary statistics.
+## 2. Data Exploration
+
+- Checked dataset information.
+- Displayed summary statistics.
 - Verified missing values.
 
-### 3. Feature Selection
+## 3. Feature Selection
+
 Selected the following features:
+
 - House Age
 - Distance to MRT Station
 - Number of Convenience Stores
@@ -65,33 +94,74 @@ Selected the following features:
 - Longitude
 - House Price
 
-### 4. Data Scaling
-Applied **StandardScaler** to normalize all features before clustering.
+## 4. Data Scaling
 
-### 5. Elbow Method
-Used the Elbow Method to determine the optimal number of clusters.
+Applied **StandardScaler** to normalize the selected features before clustering.
 
-### 6. K-Means Clustering
-Applied K-Means to group similar properties into clusters.
+## 5. Elbow Method
 
-### 7. PCA Visualization
-Reduced the dataset to two dimensions using PCA for visualization.
+Calculated WCSS values for different cluster numbers and plotted the Elbow graph to determine the optimal number of clusters.
 
-### 8. Interactive Map
-Created an interactive Folium map displaying clustered properties based on their geographical locations.
+## 6. K-Means Clustering
+
+Applied K-Means clustering to group similar properties.
+
+## 7. Cluster Assignment
+
+Assigned cluster labels to each property and stored them in a new column.
+
+## 8. PCA Visualization
+
+Reduced six-dimensional data into two principal components for visualization.
+
+Generated a scatter plot showing different property clusters.
+
+## 9. Interactive Geographic Visualization
+
+Created an interactive Folium map using the latitude and longitude coordinates.
+
+Each property is displayed as a colored marker based on its assigned cluster.
+
+Clicking on a marker displays:
+
+- Cluster Number
+- House Price
+- House Age
 
 ---
 
-## Project Outputs
+# Interactive Map
 
-- Clustered Dataset (CSV)
+The project generates an interactive HTML map using Folium.
+
+### Features
+
+- Interactive zoom
+- Colored cluster markers
+- Property information popup
+- Geographic visualization
+- Easy exploration of clustered properties
+
+The generated map is saved as:
+
+```
+Real_Estate_Clusters.html
+```
+
+---
+
+# Output Files
+
+The project generates the following outputs:
+
 - Elbow Method Graph
 - PCA Cluster Visualization
-- Interactive Folium Map
+- Clustered Dataset (`Real_Estate_Clustered.csv`)
+- Interactive Folium Map (`Real_Estate_Clusters.html`)
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```
 Large-Scale-Geographic-Consumer-Clustering-High-Dimensional-Visualizations/
@@ -105,21 +175,52 @@ Large-Scale-Geographic-Consumer-Clustering-High-Dimensional-Visualizations/
 
 ---
 
-## Results
+# Results
 
-The K-Means algorithm successfully grouped similar properties into clusters based on geographical location and housing characteristics.
-
-The PCA visualization clearly shows the separation between different property clusters.
-
-The Folium map provides an interactive geographic visualization, allowing users to explore clustered properties on a map.
+- Successfully identified different groups of properties using K-Means clustering.
+- Reduced high-dimensional data using PCA for easy visualization.
+- Generated an interactive geographic map showing clustered properties.
+- Saved the clustered dataset for further analysis.
 
 ---
 
-## Note
+# Future Enhancements
 
-The interactive Folium map works correctly in **Google Colab** and **Jupyter Notebook**.
+- Compare with DBSCAN clustering.
+- Apply Hierarchical Clustering.
+- Build a Streamlit dashboard.
+- Add Silhouette Score evaluation.
+- Integrate additional housing features.
 
-GitHub's notebook preview may not render interactive Folium maps because it does not consistently execute the JavaScript required by Folium.
+---
+
+# How to Run the Project
+
+1. Clone the repository.
+
+```
+git clone https://github.com/VasundhraVS/Large-Scale-Geographic-Consumer-Clustering-High-Dimensional-Visualizations.git
+```
+
+2. Open the notebook in Google Colab or Jupyter Notebook.
+
+3. Install the required libraries.
+
+```
+pip install pandas numpy matplotlib scikit-learn folium
+```
+
+4. Run all cells sequentially.
+
+5. View the generated outputs.
+
+---
+
+# Note
+
+The interactive Folium map displays correctly in **Google Colab** and **Jupyter Notebook**.
+
+GitHub's notebook preview may not display the interactive map because it does not consistently execute the JavaScript required by Folium.
 
 To view the interactive map, open:
 
@@ -131,11 +232,8 @@ in any modern web browser.
 
 ---
 
-## Future Improvements
+# Author
 
-- Apply DBSCAN and Hierarchical Clustering for comparison.
-- Build an interactive dashboard using Streamlit.
-- Add customer segmentation based on additional demographic features.
-- Perform cluster evaluation using Silhouette Score and Davies-Bouldin Index.
+**Vasundhra VS**
 
----
+Machine Learning | Python | Data Analytics | Data Visualization
