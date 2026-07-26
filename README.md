@@ -1,11 +1,5 @@
 # 🏠 Large-Scale Geographic Consumer Clustering & High-Dimensional Visualizations
 
-![Python](https://img.shields.io/badge/Python-3.10-blue)
-![Machine Learning](https://img.shields.io/badge/Machine%20Learning-KMeans-green)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange)
-![Folium](https://img.shields.io/badge/Folium-Interactive%20Maps-brightgreen)
-
----
 
 ## 📌 Project Overview
 
@@ -198,7 +192,7 @@ Real_Estate_Clusters.html
 
 # 🖼️ Map Preview
 
-
+ https://vasundhravs.github.io/Real_Estate_Price_Prediction/
 
 ---
 
