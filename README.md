@@ -280,12 +280,3 @@ Real_Estate_Clusters.html
 
 ---
 
-# 👩‍💻 Author
-
-**Vasundhra VS**
-
-Machine Learning | Python | Data Analytics | Data Visualization
-
----
-
-⭐ If you found this project useful, consider giving it a star on GitHub!
